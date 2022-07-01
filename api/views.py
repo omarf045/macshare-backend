@@ -101,7 +101,6 @@ class ProtectedPhotoAPI(APIView):
 
         get_protected_image(path, id_shared_with, photo_name)
 
-        #######################################################################
         file_location = './media/output/' + photo_name + '.png'
 
         try:

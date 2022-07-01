@@ -5,7 +5,6 @@ import numpy as np
 import imageio as iio
 from matplotlib import pyplot as plt
 from os import remove
-import os
 from PIL import Image
 
 
@@ -180,15 +179,11 @@ def verify_image(path):
     datosgMRE2 = datosgMRE2.reshape(y1, x1)
 
     _, dst2 = cv2.threshold(datosgMRE2, 3, 250, cv2.THRESH_BINARY)
-
-    # filename_marcarec = fd.asksaveasfilename(title='Guarde la imagen de salida: ', defaultextension=".jpg", filetypes=filetypes)
     filename_marcarec = "marca_rec.jpg"
 
     iio.imsave(filename_marcarec, dst2)
 
     cv2.destroyAllWindows()
-
-    #########################################################################################################################
 
     image = Image.open("marca_rec.jpg")
     image = image.convert('RGB')
